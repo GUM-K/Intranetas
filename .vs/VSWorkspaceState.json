@@ -1,10 +1,8 @@
 {
   "ExpandedNodes": [
     "",
-    "\\intranetas-react",
-    "\\intranetas-react\\src",
-    "\\intranetas-react\\src\\login"
+    "\\intranetas-react"
   ],
-  "SelectedNode": "\\intranetas-react\\src\\login\\index.js",
+  "SelectedNode": "\\intranetas-react\\src",
   "PreviewInSolutionExplorer": false
 }

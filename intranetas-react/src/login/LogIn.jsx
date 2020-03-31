@@ -13,8 +13,8 @@ export default () => {
         event.preventDefault();
     }
     return (
-        <div className="Login">
-            <form onSubmit={handleSubmit}>
+        <div className="login">
+            <form onSubmit={handleSubmit} className="login-form">
                 <FormGroup controlId="email" bsSize="large">
                     <label>Email</label>
                     <FormControl
