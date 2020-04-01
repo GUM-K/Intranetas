@@ -1,8 +1,10 @@
 {
   "ExpandedNodes": [
     "",
-    "\\intranetas-react"
+    "\\intranetas-react",
+    "\\intranetas-react\\src",
+    "\\intranetas-react\\src\\SideNav"
   ],
-  "SelectedNode": "\\intranetas-react\\src",
+  "SelectedNode": "\\intranetas-react\\src\\SideNav",
   "PreviewInSolutionExplorer": false
 }
