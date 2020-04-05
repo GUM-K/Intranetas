@@ -1,8 +1,10 @@
 {
   "ExpandedNodes": [
     "",
-    "\\intranetas-react"
+    "\\intranetas-api",
+    "\\intranetas-api\\intranetas-api",
+    "\\intranetas-react\\src"
   ],
-  "SelectedNode": "\\intranetas-react\\src",
+  "SelectedNode": "\\intranetas-api\\intranetas-api\\Models",
   "PreviewInSolutionExplorer": false
 }
