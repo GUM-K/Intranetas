@@ -38,7 +38,5 @@ export default () => {
             document.body.style.backgroundColor = "white";
             setSideBarOpen(false);
         }
-    }
-
-   
+    }   
 }
