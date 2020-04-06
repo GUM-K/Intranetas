@@ -8,8 +8,7 @@ export default () => {
     return (
         <div>            
             <div id="mySidenav" class="sidenav">
-                <a href="javascript:void(0)" class="closebtn" onClick={closeNav}>&times;</a>
-                <a href="#">Home</a>
+                <a href="/home">Home</a>
                 <a href="#">Finances</a>
                 <a href="#">Settings</a>
                 <a href="#">Courses</a>
@@ -21,25 +20,25 @@ export default () => {
             </div>
 
             <div id="main">
-                <span style={{ fontSize: '30px', cursor: 'pointer' }} onClick={openNav}>☰ open</span>
+                <span style={{ fontSize: '30px', cursor: 'pointer' }} onClick={openNav}>☰</span>
             </div>
         </div>
     )
 
     function openNav() {
-        document.getElementById("mySidenav").style.width = "250px";
-        document.getElementById("main").style.marginLeft = "250px";
-        document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
-
-
+        if (!sideBarOpen) {
+            document.getElementById("mySidenav").style.width = "250px";
+            document.getElementById("main").style.marginLeft = "250px";
+            document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+            setSideBarOpen(true);
+        }
+        else {
+            document.getElementById("mySidenav").style.width = "0";
+            document.getElementById("main").style.marginLeft = "0";
+            document.body.style.backgroundColor = "white";
+            setSideBarOpen(false);
+        }
     }
-
-    function closeNav() {
-        document.getElementById("mySidenav").style.width = "0";
-        document.getElementById("main").style.marginLeft = "0";
-        document.body.style.backgroundColor = "white";
-
-    } 
 
    
 }
