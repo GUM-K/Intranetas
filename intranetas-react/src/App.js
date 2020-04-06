@@ -1,15 +1,15 @@
 import React from 'react';
 import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
 import { LogIn } from './login';
-import { SideBar } from './SideNav';
+import { HomePage } from './homepage';
 
 function App() {
     return (
         <BrowserRouter>
             <Switch>
                 <Route path={'/login'} component={LogIn}/>  
-                <Route path={'/SideNav'} component={SideBar} />
-                <Redirect exact from={'/'} to={'/SideNav'} />
+                <Route path={'/home'} component={HomePage} />
+                <Redirect exact from={'/'} to={'/home'} />
             </Switch>
         </BrowserRouter>
     );

@@ -21,8 +21,6 @@ export default () => {
             </div>
 
             <div id="main">
-                <h2>dewbridge, making my life miserable anno 2020</h2>
-                <p>Home </p>
                 <span style={{ fontSize: '30px', cursor: 'pointer' }} onClick={openNav}>☰ open</span>
             </div>
         </div>
