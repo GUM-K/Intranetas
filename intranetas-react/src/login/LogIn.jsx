@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { Button, FormGroup, FormControl } from "react-bootstrap";
+import { Link, Redirect } from 'react-router-dom';
 
 export default () => {
     const [email, setEmail] = useState("");
@@ -32,9 +33,11 @@ export default () => {
                         type="password"
                     />
                 </FormGroup>
-                <Button block bsSize="large" disabled={!validateForm()} type="submit">
-                    Login
-        </Button>
+                <Link to="/home">
+                    <Button block bsSize="large" disabled={!validateForm()} type="submit">
+                            Login
+                    </Button>
+                </Link>
             </form>
         </div>
         )
