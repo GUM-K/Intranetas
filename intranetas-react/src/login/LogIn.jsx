@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Button, FormGroup, FormControl } from "react-bootstrap";
-import { Link, Redirect } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 export default () => {
     const [email, setEmail] = useState("");
