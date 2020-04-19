@@ -20,7 +20,7 @@ namespace InsertDataToDB
 
         private void button1_Click(object sender, EventArgs e)
         {
-            SqlConnection connection = new SqlConnection("Data Source=LAPTOP-T363QTHJ\\INTRANETASSQL;Initial Catalog=User;Integrated Security=True");
+            SqlConnection connection = new SqlConnection("Data Source=DESKTOP-PC6EBE2;Initial Catalog=User;Integrated Security=True");
             connection.Open();
             SqlCommand command = new SqlCommand("insert into UserTable(Email, Password) values(@Email,@Password)", connection);
             command.Parameters.Add("@email", SqlDbType.NVarChar).Value = textBox1.Text;
