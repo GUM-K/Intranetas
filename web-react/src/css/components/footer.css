@@ -1,0 +1,25 @@
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #ab0909;
+    color: white;
+    text-align: center;
+}
+
+.paper {
+    background-color: #ab0909;
+    color: black;
+}
+
+.head{
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+}
+.soc{
+    font-size: 14px;
+    font-weight: 200;
+    color: white;
+}

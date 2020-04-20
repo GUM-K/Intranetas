@@ -1,6 +1,7 @@
 import React from 'react'
 import { SideBar } from '../_components'
 import { Header } from '../_components'
+import {Footer} from '../_components'
 import 'react-calendar/dist/Calendar.css';
 import { userActions } from '../_actions';
 import { connect } from 'react-redux';
@@ -11,6 +12,7 @@ class HomePage extends React.Component {
             <div className="homePageWrapper">
                 <Header />
                 <SideBar />
+                <Footer />
             </div>
         )
     }

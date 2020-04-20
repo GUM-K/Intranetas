@@ -89,7 +89,7 @@ class LoginPage extends React.Component {
                     <div className={classes.paper}>
                         <Typography component="h1" variant="h5">
                             Login
-                    </Typography>
+                        </Typography>
                         <form className={classes.form} onSubmit={this.handleSubmit} noValidate>
                             <ThemeProvider theme={theme}>
                                 <TextField
