@@ -1,15 +1,14 @@
 .footer {
-    position: fixed;
     left: 0;
     bottom: 0;
     width: 100%;
-    background-color: #ab0909;
+    background-color: #5b3034;
     color: white;
     text-align: center;
 }
 
 .paper {
-    background-color: #ab0909;
+    background: transparent;
     color: black;
 }
 

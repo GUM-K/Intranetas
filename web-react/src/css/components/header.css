@@ -5,6 +5,7 @@
 a {
     text-decoration: none;
     color: black;
+    transition: 0.3s
 }
 a:hover {
     text-decoration: none;
@@ -12,12 +13,12 @@ a:hover {
 }
 .header-wrapper {
     position: relative;
-    background-color: #ab0909;
+    background-color: #5b3034;
     height: 89px;
 }
 .header {
     overflow: hidden;
-    background-color: #ab0909;
+    background-color: #5b3034;
     padding: 20px 10px;
     min-height: 49px;
 }
@@ -45,7 +46,6 @@ a:hover {
     }
 
 .menu-component:hover {
-    background-color: #CC4A3C;
     color: black;
 }
 

@@ -59,7 +59,7 @@ export const Header = () => {
     return (
         <div className="header-wrapper">
             <div className="header">
-                <a href="/" className="logo menu-component">Dewbridge</a>
+                <a href="/" className="logo menu-component">dewbridge</a>
                 <div className="header-right">
                     <a href="/" className="menu-component">Home</a>
                     <a onClick={handleClick} className="menu-component">Calendar</a>

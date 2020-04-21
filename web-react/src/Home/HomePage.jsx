@@ -5,6 +5,7 @@ import {Footer} from '../_components'
 import 'react-calendar/dist/Calendar.css';
 import { userActions } from '../_actions';
 import { connect } from 'react-redux';
+import '../css/main.css';
 
 class HomePage extends React.Component {
     render() {
@@ -12,6 +13,50 @@ class HomePage extends React.Component {
             <div className="homePageWrapper">
                 <Header />
                 <SideBar />
+                <div className="content">          
+                    <div> feet and boobs </div>
+                    <div> feet and boobs </div>
+                    <div> feet and boobs </div>
+                    <div> feet and boobs </div>
+                    <div> feet and boobs </div>
+                    <div> feet and boobs </div>
+                    <div> feet and boobs </div>
+                    <div> feet and boobs </div>
+                    <div> feet and boobs </div>
+                    <div> feet and boobs </div>
+                    <div> feet and boobs </div>
+                    <div> feet and boobs </div>
+                    <div> feet and boobs </div>
+                    <div> feet and boobs </div>
+                    <div> feet and boobs </div>
+                    <div> feet and boobs </div>
+                    <div> feet and boobs </div>
+                    <div> feet and boobs </div>
+                    <div> feet and boobs </div>
+                    <div> feet and boobs </div>
+                    <div> feet and boobs </div>
+                    <div> feet and boobs </div>
+                    <div> feet and boobs </div>
+                    <div> feet and boobs </div>
+                    <div> feet and boobs </div>
+                    <div> feet and boobs </div>
+                    <div> feet and boobs </div>
+                    <div> feet and boobs </div>
+                    <div> feet and boobs </div>
+                    <div> feet and boobs </div>
+                    <div> feet and boobs </div>
+                    <div> feet and boobs </div>
+                    <div> feet and boobs </div>
+                    <div> feet and boobs </div>
+                    <div> feet and boobs </div>
+                    <div> feet and boobs </div>
+                    <div> feet and boobs </div>
+                    <div> feet and boobs </div>
+                    <div> feet and boobs </div>
+                    <div> feet and boobs </div>
+                    <div> feet and boobs </div>
+                    <div> feet and boobs </div>
+                </div>
                 <Footer />
             </div>
         )
