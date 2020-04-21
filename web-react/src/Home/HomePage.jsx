@@ -14,48 +14,7 @@ class HomePage extends React.Component {
                 <Header />
                 <SideBar />
                 <div className="content">          
-                    <div> feet and boobs </div>
-                    <div> feet and boobs </div>
-                    <div> feet and boobs </div>
-                    <div> feet and boobs </div>
-                    <div> feet and boobs </div>
-                    <div> feet and boobs </div>
-                    <div> feet and boobs </div>
-                    <div> feet and boobs </div>
-                    <div> feet and boobs </div>
-                    <div> feet and boobs </div>
-                    <div> feet and boobs </div>
-                    <div> feet and boobs </div>
-                    <div> feet and boobs </div>
-                    <div> feet and boobs </div>
-                    <div> feet and boobs </div>
-                    <div> feet and boobs </div>
-                    <div> feet and boobs </div>
-                    <div> feet and boobs </div>
-                    <div> feet and boobs </div>
-                    <div> feet and boobs </div>
-                    <div> feet and boobs </div>
-                    <div> feet and boobs </div>
-                    <div> feet and boobs </div>
-                    <div> feet and boobs </div>
-                    <div> feet and boobs </div>
-                    <div> feet and boobs </div>
-                    <div> feet and boobs </div>
-                    <div> feet and boobs </div>
-                    <div> feet and boobs </div>
-                    <div> feet and boobs </div>
-                    <div> feet and boobs </div>
-                    <div> feet and boobs </div>
-                    <div> feet and boobs </div>
-                    <div> feet and boobs </div>
-                    <div> feet and boobs </div>
-                    <div> feet and boobs </div>
-                    <div> feet and boobs </div>
-                    <div> feet and boobs </div>
-                    <div> feet and boobs </div>
-                    <div> feet and boobs </div>
-                    <div> feet and boobs </div>
-                    <div> feet and boobs </div>
+                    
                 </div>
                 <Footer />
             </div>
