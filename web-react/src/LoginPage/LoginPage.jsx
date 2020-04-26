@@ -13,7 +13,7 @@ import { userActions } from '../_actions';
 const theme = createMuiTheme({
     palette: {
         primary: {
-            main: '#ab0909',
+            main: '#5b3034',
         },
         secondary: {
             light: '#0066ff',

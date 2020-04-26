@@ -5,6 +5,7 @@ import {Footer} from '../_components'
 import 'react-calendar/dist/Calendar.css';
 import { userActions } from '../_actions';
 import { connect } from 'react-redux';
+import '../css/main.css';
 
 class HomePage extends React.Component {
     render() {
@@ -13,6 +14,9 @@ class HomePage extends React.Component {
                 {console.log(JSON.parse(localStorage.getItem('user')))}
                 <Header />
                 <SideBar />
+                <div className="content">          
+                    
+                </div>
                 <Footer />
             </div>
         )

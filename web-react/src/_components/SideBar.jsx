@@ -19,7 +19,7 @@ export const SideBar = () => {
                 <a href="#">Vacation</a>
             </div>
 
-            <div id="main">
+            <div id="main" style={{ backgroundColor: '#faf4f4'}}>
                 <span style={{ fontSize: '30px', cursor: 'pointer' }} onClick={openNav}>☰</span>
             </div>
         </div>

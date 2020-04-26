@@ -1,16 +1,13 @@
 .footer {
-    position: fixed;
     left: 0;
     bottom: 0;
     width: 100%;
-    background: rgb(128,0,0);
-    background: linear-gradient(90deg, rgba(128,0,0,1) 0%, rgba(183,8,8,0.9) 23%, rgba(135,0,0,1) 100%);
     color: white;
     text-align: center;
 }
 
 .paper {
-    
+    background: transparent;
     color: black;
 }
 

@@ -1,0 +1,13 @@
+
+Bitches and bitchai
+
+Jei kaþkas neapraðyta, keisti nereikia, by default 
+Pagrindiniai dalykai:
+
+Elementai, kaip buttons, header, footer, pnð:
+background-color: #5b3034;
+font-family: Arial, Helvetica, sans-serif
+
+Kiekvieno page contentui prisikiriama klasë className="content", todël visø pradþioj
+import '../css/main.css';
+

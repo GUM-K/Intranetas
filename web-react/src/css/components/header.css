@@ -5,6 +5,7 @@
 a {
     text-decoration: none;
     color: black;
+    transition: 0.3s
 }
 a:hover {
     text-decoration: none;
@@ -12,14 +13,12 @@ a:hover {
 }
 .header-wrapper {
     position: relative;
-    background: rgb(128,0,0);
-    background: linear-gradient(90deg, rgba(128,0,0,1) 0%, rgba(183,8,8,0.9) 23%, rgba(135,0,0,1) 100%);
+    background-color: #5b3034;
     height: 89px;
 }
 .header {
     overflow: hidden;
-    background: rgb(128,0,0);
-    background: linear-gradient(90deg, rgba(128,0,0,1) 0%, rgba(183,8,8,0.9) 23%, rgba(135,0,0,1) 100%);
+    background-color: #5b3034;
     padding: 20px 10px;
     min-height: 49px;
 }
@@ -64,7 +63,6 @@ a:hover {
     }
 
 .menu-component:hover {
-    background-color: #CC4A3C;
     color: black;
 }
 
