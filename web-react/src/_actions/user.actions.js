@@ -8,6 +8,7 @@ export const userActions = {
     logout,
     register,
     getAll,
+    update,
     delete: _delete
 };
 
@@ -45,7 +46,7 @@ function register(user) {
         userService.register(user)
             .then(
                 user => { 
-                    dispatch(success());
+                    dispatch(success(user));
                     history.push('/login');
                     dispatch(alertActions.success('Registration successful'));
                 },
@@ -55,10 +56,33 @@ function register(user) {
                 }
             );
     };
-
     function request(user) { return { type: userConstants.REGISTER_REQUEST, user } }
     function success(user) { return { type: userConstants.REGISTER_SUCCESS, user } }
     function failure(error) { return { type: userConstants.REGISTER_FAILURE, error } }
+    
+}
+
+function update(user) {
+    return dispatch => {
+        dispatch(request(user));
+        console.log(user);
+        userService.update(user)
+            .then(
+                user => {
+                    dispatch(success());
+                    history.push('/');
+                    dispatch(alertActions.success('Updated successfully'));
+                },
+                error => {
+                    dispatch(failure(error.toString()));
+                    dispatch(alertActions.error(error.toString()));
+                }
+            );
+    };
+    function request(user) { return { type: userConstants.UPDATE_REQUEST, user } }
+    function success(user) { return { type: userConstants.UPDATE_SUCCESS, user } }
+    function failure(error) { return { type: userConstants.UPDATE_FAILURE, error } }
+    
 }
 
 function getAll() {

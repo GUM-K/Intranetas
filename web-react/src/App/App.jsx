@@ -8,6 +8,7 @@ import { PrivateRoute } from '../_components';
 import { UsersPage } from '../UsersPage';
 import { LoginPage } from '../LoginPage';
 import { RegisterPage } from '../RegisterPage';
+import { UpdatePage } from '../UpdatePage';
 import { HomePage } from '../home';
 import { Helmet } from 'react-helmet';
 
@@ -34,6 +35,7 @@ class App extends React.Component {
                 <Router history={history}>
                     <Switch>
                         <PrivateRoute exact path="/" component={HomePage} />
+                        <PrivateRoute exact path="/update" component={UpdatePage} />
                         <Route path="/login" component={LoginPage} />
                         <Route path="/register" component={RegisterPage} />
                         <Route path="/users" component={UsersPage} />

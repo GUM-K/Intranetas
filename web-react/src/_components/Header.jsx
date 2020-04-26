@@ -56,11 +56,15 @@ export const Header = () => {
         prevOpen.current = open;
     }, [open]);
 
+    const user = JSON.parse(localStorage.getItem('user'));
     return (
         <div className="header-wrapper">
             <div className="header">
                 <a href="/" className="logo menu-component">Dewbridge</a>
                 <div className="header-right">
+                    <p className="menu-user">
+                        Hi, {user.firstName}
+                    </p>
                     <a href="/" className="menu-component">Home</a>
                     <a onClick={handleClick} className="menu-component">Calendar</a>
                     <a
@@ -81,7 +85,7 @@ export const Header = () => {
                                 <Paper>
                                     <ClickAwayListener onClickAway={handleClose}>
                                         <MenuList id="menu-list-grow">
-                                            <MenuItem onClick={handleClose}>My account</MenuItem>
+                                            <MenuItem onClick={handleClose}><a href="/update">My account</a></MenuItem>
                                             <MenuItem onClick={handleClose}><a href="/login">Logout</a></MenuItem>
                                         </MenuList>
                                     </ClickAwayListener>

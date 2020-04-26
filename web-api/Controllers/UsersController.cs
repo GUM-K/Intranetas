@@ -110,6 +110,7 @@ namespace WebApi.Controllers
             // map model to entity and set id
             var user = _mapper.Map<User>(model);
             user.Id = id;
+            Console.WriteLine(model);
 
             try
             {
