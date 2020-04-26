@@ -1,5 +1,5 @@
 import React from 'react';
-import { UserForm } from '../_components'
+import { RegisterForm } from '../_components'
 
 class RegisterPage extends React.Component {
     constructor(props) {
@@ -8,7 +8,7 @@ class RegisterPage extends React.Component {
 
     render() {
         return (
-            <UserForm formTitle="Register" />
+            <RegisterForm />
         );
     }
 }

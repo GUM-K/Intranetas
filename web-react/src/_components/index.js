@@ -3,6 +3,7 @@ export * from './Header';
 export * from './SideBar';
 import Footer from './Footer';
 export * from './UserForm';
+export * from './RegisterForm';
 
 export {
     Footer
