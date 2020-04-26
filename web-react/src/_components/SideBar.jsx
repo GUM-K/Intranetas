@@ -15,7 +15,7 @@ export const SideBar = () => {
                 <a href="#">Edit profile</a>
                 <a href="https://www.youtube.com/watch?v=qTksCYUgI7s">Screaming tutorials</a>
                 <a href="#">Teams</a>
-                <a href="#">Career</a>
+                <a href="/career">Career</a>
                 <a href="#">Vacation</a>
             </div>
 
