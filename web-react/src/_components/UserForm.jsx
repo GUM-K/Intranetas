@@ -92,6 +92,7 @@ class UserForm extends React.Component {
                         <Link to="/" className="btn btn-link">Cancel</Link>
                     </div>
                 </form>
+                {JSON.parse(localStorage.getItem('user')).changePassword === 1 && <div className="password-change">We highly recommend to change your initial password</div>}
             </div>
         );
     }

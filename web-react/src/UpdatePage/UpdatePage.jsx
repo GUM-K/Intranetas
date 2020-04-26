@@ -10,8 +10,11 @@ class UpdatePage extends React.Component {
     }
 
     render() {
+        const user = this.state.user;
         return (
-            <UserForm formTitle="Update" userInfo={this.state.user} />
+            <div>
+                <UserForm formTitle="Update" userInfo={user} />
+            </div>
         );
     }
 }

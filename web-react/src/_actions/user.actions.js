@@ -20,7 +20,12 @@ function login(username, password) {
             .then(
                 user => { 
                     dispatch(success(user));
-                    history.push('/');
+                    if (user.changePassword === 1) {
+                        history.push('/update');
+                    }
+                    else {
+                        history.push('/');
+                    }
                 },
                 error => {
                     dispatch(failure(error.toString()));

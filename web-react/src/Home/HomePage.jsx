@@ -10,6 +10,7 @@ class HomePage extends React.Component {
     render() {
         return (
             <div className="homePageWrapper">
+                {console.log(JSON.parse(localStorage.getItem('user')))}
                 <Header />
                 <SideBar />
                 <Footer />

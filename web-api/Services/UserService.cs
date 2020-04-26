@@ -68,6 +68,7 @@ namespace WebApi.Services
 
             user.PasswordHash = passwordHash;
             user.PasswordSalt = passwordSalt;
+            user.ChangePassword = 1;
 
             _context.Users.Add(user);
             _context.SaveChanges();
@@ -107,8 +108,8 @@ namespace WebApi.Services
 
                 user.PasswordHash = passwordHash;
                 user.PasswordSalt = passwordSalt;
+                user.ChangePassword = userParam.ChangePassword;
             }
-
             _context.Users.Update(user);
             _context.SaveChanges();
         }

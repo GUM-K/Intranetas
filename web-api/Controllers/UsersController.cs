@@ -64,6 +64,7 @@ namespace WebApi.Controllers
                 Username = user.Username,
                 FirstName = user.FirstName,
                 LastName = user.LastName,
+                ChangePassword = user.ChangePassword,
                 Token = tokenString
             });
         }
@@ -110,8 +111,7 @@ namespace WebApi.Controllers
             // map model to entity and set id
             var user = _mapper.Map<User>(model);
             user.Id = id;
-            Console.WriteLine(model);
-
+            user.ChangePassword = 0;
             try
             {
                 // update user 
