@@ -9,6 +9,7 @@ import { UsersPage } from '../UsersPage';
 import { LoginPage } from '../LoginPage';
 import { RegisterPage } from '../RegisterPage';
 import { UpdatePage } from '../UpdatePage';
+import { Career } from '../Career';
 import { HomePage } from '../home';
 import { Helmet } from 'react-helmet';
 
@@ -39,6 +40,7 @@ class App extends React.Component {
                         <Route path="/login" component={LoginPage} />
                         <Route path="/register" component={RegisterPage} />
                         <Route path="/users" component={UsersPage} />
+                        <PrivateRoute path="/career" component={Career} />
                         <Redirect from="*" to="/" />
                     </Switch>
                 </Router>

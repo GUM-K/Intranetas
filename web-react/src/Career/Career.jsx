@@ -1,28 +1,20 @@
 import React from 'react'
 import { SideBar } from '../_components'
 import { Header } from '../_components'
-import {Footer} from '../_components'
-import 'react-calendar/dist/Calendar.css';
+import { Footer } from '../_components'
 import { userActions } from '../_actions';
 import { connect } from 'react-redux';
 import '../css/main.css';
+import '../css/career.css';
 
-class HomePage extends React.Component {
+class Career extends React.Component {
     render() {
         return (
-            <div className="homePageWrapper">
-                {console.log(JSON.parse(localStorage.getItem('user')))}
+            <div className="careerPageWrapper">
                 <Header />
                 <SideBar />
                 <div className="content">
-                    <div> lol </div>
-                    <div> lol </div>
-                    <div> lol </div>
-                    <div> lol </div>
-                    <div> lol </div>
-                    <div> lol </div>
-                    <div> lol </div>
-                    <div> lol </div>
+                    <div className="heading1"> Current position </div>
                 </div>
                 <Footer />
             </div>
@@ -41,5 +33,5 @@ const actionCreators = {
     deleteUser: userActions.delete
 }
 
-const connectedHomePage = connect(mapState, actionCreators)(HomePage);
-export { connectedHomePage as HomePage };
+const connectedCareer = connect(mapState, actionCreators)(Career);
+export { connectedCareer as Career };
