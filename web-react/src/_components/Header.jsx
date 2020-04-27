@@ -18,7 +18,7 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-export const Header = () => {
+export const Header = ({ pageName }) => {
     const classes = useStyles();
     const [open, setOpen] = useState(false);
     const anchorRef = useRef(null);
@@ -61,6 +61,7 @@ export const Header = () => {
         <div className="header-wrapper">
             <div className="header">
                 <a href="/" className="logo menu-component">dewbridge</a>
+                <p className="pagename"> &emsp;&emsp;&emsp;&emsp;&emsp;{pageName} </p>
                 <div className="header-right">
                     <p className="menu-user">
                         Hi, {user.firstName}

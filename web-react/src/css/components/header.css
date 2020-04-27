@@ -62,6 +62,23 @@ a:hover {
     font-weight: bold;
     }
 
+.pagename {
+    float: left;
+    text-align: center;
+    padding: 12px;
+    text-decoration: none;
+    cursor: auto;
+    font-size: 23px;
+    font-weight: bold;
+    line-height: 25px;
+    border-radius: 4px;
+    color: white;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
 .menu-component:hover {
     color: black;
 }
@@ -86,6 +103,7 @@ a:hover {
     right: 0;
     top: 0;
 }
+
 
 @media screen and (max-width: 500px) {
     .header a {

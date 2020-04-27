@@ -46,9 +46,11 @@ const rows1 = [
 
 class Career extends React.Component {
     render() {
+
+        const user = JSON.parse(localStorage.getItem('user'));
         return (
             <div className="careerPageWrapper">
-                <Header />
+                <Header pageName='Career' />
                 <SideBar />
                 <div className="content">
                     <div className="heading1"> Current position </div>
@@ -62,7 +64,8 @@ class Career extends React.Component {
                         </div>
                     </Grid>
                     <div className="heading1"> Available positions </div>
-                    <Grid item xs={12} sm={8} pb={20}>
+                    <div className="empty" />
+                    <Grid item xs={12} sm={8}>
                         <TableContainer component={Paper} >
                             <Table className={useStyles.table} aria-label="simple table">
                             <TableHead className="TableHead">
@@ -88,8 +91,11 @@ class Career extends React.Component {
                         </Table>
                         </TableContainer>
                     </Grid>
+
+                    <div className="empty" />
                     <div className="heading1"> My applications </div>
-                    <Grid item xs={12} sm={6} pb={20}>
+                    <div className="empty" />
+                    <Grid item xs={12} sm={6}>
                         <TableContainer component={Paper}>
                             <Table className={useStyles.table} aria-label="simple table">
                                 <TableHead className="TableHead">
@@ -111,6 +117,7 @@ class Career extends React.Component {
                             </Table>
                         </TableContainer>
                     </Grid>
+                    <div className="empty" />
                 </div>
                 <Footer />
             </div>

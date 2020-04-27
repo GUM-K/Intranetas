@@ -9,17 +9,17 @@ export const SideBar = () => {
         <div>            
             <div id="mySidenav" className="sidenav">
                 <a href="/home">Home</a>
-                <a href="#">Finances</a>
+                <a href="#" >Finances</a>
                 <a href="#">Settings</a>
-                <a href="#">Courses</a>
-                <a href="#">Edit profile</a>
-                <a href="https://www.youtube.com/watch?v=qTksCYUgI7s">Screaming tutorials</a>
-                <a href="#">Teams</a>
+                <a href="#" >Courses</a>
+                <a href="#" >Edit profile</a>
+                <a href="#">Paychecks</a>
+                <a href="#" >Teams</a>                
+                <a href="#" >Vacation</a>
                 <a href="/career">Career</a>
-                <a href="#">Vacation</a>
             </div>
 
-            <div id="main" style={{ backgroundColor: '#faf4f4'}}>
+            <div id="main" style={{ backgroundColor: '#faf4f4' }}>
                 <span style={{ fontSize: '30px', cursor: 'pointer' }} onClick={openNav}>☰</span>
             </div>
         </div>
