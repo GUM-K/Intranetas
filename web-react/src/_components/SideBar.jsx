@@ -16,6 +16,7 @@ export const SideBar = () => {
                 <a href="#">Paychecks</a>
                 <a href="#" >Teams</a>                
                 <a href="#" >Vacation</a>
+                <a href="/application" >Application</a>
                 <a href="/career">Career</a>
             </div>
 

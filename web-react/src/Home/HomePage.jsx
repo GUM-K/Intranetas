@@ -15,14 +15,7 @@ class HomePage extends React.Component {
                 <Header />
                 <SideBar />
                 <div className="content">
-                    <div> lol </div>
-                    <div> lol </div>
-                    <div> lol </div>
-                    <div> lol </div>
-                    <div> lol </div>
-                    <div> lol </div>
-                    <div> lol </div>
-                    <div> lol </div>
+                    
                 </div>
                 <Footer />
             </div>

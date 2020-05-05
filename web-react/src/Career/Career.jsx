@@ -56,7 +56,7 @@ class Career extends React.Component {
                     <div className="heading1"> Current position </div>
                     <Grid item xs={12} sm={4}>
                         <div className="pap">
-                            <div className="heading2"> Piece of shit</div>
+                            <div className="heading2"> Piece of fun :)</div>
                             <Grid container direction="column" justify="left" alignItems="left">
                                 <div className="text"> Current pay: 0 </div>
                                 <div className="text"> Time: all </div>
