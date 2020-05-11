@@ -56,15 +56,10 @@ export default () => {
             formData.append('CV', CV);
             formData.append('Motivational', motivational);
             formData.append('AdditionalInfo', additionalInfo);
-            const requestOptions = {
-                method: 'POST',
-                headers: { 'Content-Type': 'multipart/form-data' },
-                body: JSON.stringify(formData)
-            };
 
             return axios({
                 method: 'post',
-                url: 'https://cors-anywhere.herokuapp.com/http://localhost:4000/applications/upload',
+                url: 'http://localhost:4000/applications/upload',
                 headers: {'Content-Type': 'multipart/form-data' },
                 data: formData,
                 })
