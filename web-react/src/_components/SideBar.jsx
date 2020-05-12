@@ -13,7 +13,7 @@ export const SideBar = () => {
                 <a href="#">Settings</a>
                 <a href="#" >Courses</a>
                 <a href="#" >Edit profile</a>
-                <a href="#">Paychecks</a>
+                <a href="/paychecks">Paychecks</a>
                 <a href="#" >Teams</a>                
                 <a href="#" >Vacation</a>
                 <a href="/application" >Application</a>

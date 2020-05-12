@@ -13,6 +13,7 @@ import { ApplicationPage } from '../ApplicationPage';
 import { Career } from '../Career';
 import { HomePage } from '../home';
 import { Helmet } from 'react-helmet';
+import { Paychecks } from '../Paychecks';
 
 class App extends React.Component {
     constructor(props) {
@@ -42,6 +43,7 @@ class App extends React.Component {
                         <Route path="/register" component={RegisterPage} />
                         <Route path="/users" component={UsersPage} />
                         <PrivateRoute path="/career" component={Career} />
+                        <PrivateRoute path="/paychecks" component={Paychecks} />
                         <PrivateRoute path="/application" component={ApplicationPage} />
                         <Redirect from="*" to="/" />
                     </Switch>
