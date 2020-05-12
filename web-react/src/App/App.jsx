@@ -8,10 +8,12 @@ import { UsersPage } from '../UsersPage';
 import { LoginPage } from '../LoginPage';
 import { RegisterPage } from '../RegisterPage';
 import { UpdatePage } from '../UpdatePage';
+import { ApplicationPage } from '../ApplicationPage';
 import { Career } from '../Career';
 import { HomePage } from '../home';
 import { Profile } from '../ProfilePage';
 import { Helmet } from 'react-helmet';
+import { Paychecks } from '../Paychecks';
 
 class App extends React.Component {
     constructor(props) {
@@ -41,7 +43,12 @@ class App extends React.Component {
                         <Route path="/register" component={RegisterPage} />
                         <Route path="/users" component={UsersPage} />
                         <PrivateRoute path="/career" component={Career} />
+<<<<<<< HEAD
                         <PrivateRoute path="/profile" component={Profile} />
+=======
+                        <PrivateRoute path="/paychecks" component={Paychecks} />
+                        <PrivateRoute path="/application" component={ApplicationPage} />
+>>>>>>> 3dc7c362f299ddd05a702da280291b5e627acafa
                         <Redirect from="*" to="/" />
                     </Switch>
                 </Router>
