@@ -11,7 +11,7 @@
     "start": "webpack-dev-server --open"
   },
   "dependencies": {
-    "@material-ui/core": "^4.9.11",
+    "@material-ui/core": "^4.9.12",
     "force": "0.0.3",
     "history": "^4.10.1",
     "react": "^16.12.0",

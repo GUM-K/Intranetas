@@ -1,14 +1,14 @@
 /*@import "./components/test.css";*/
 
-.content {
-    min-height: 50vh;
-    background-color: #faf4f4;
-    min-width: 50%;
-    padding: 10px;
-}
-
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+.content {
+    min-height: 70vh;
+    background-color: #faf4f4;
+    min-width: 50%;
+    padding: 10px;
+}
+
