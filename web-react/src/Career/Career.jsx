@@ -2,7 +2,6 @@ import React from 'react'
 import { SideBar } from '../_components'
 import { Header } from '../_components'
 import { Footer } from '../_components'
-import { userActions } from '../_actions';
 import { connect } from 'react-redux';
 import Grid from '@material-ui/core/Grid';
 import '../css/main.css';
@@ -16,6 +15,7 @@ import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import { makeStyles } from '@material-ui/core/styles';
 import { spacing } from '@material-ui/system';
+import { applicationActions } from '../_actions';
 
 const useStyles = makeStyles({
     table: {
@@ -23,30 +23,21 @@ const useStyles = makeStyles({
     },
 });
 
-function createData(name, pay, hours, needed) {
-    return { name, pay, hours, needed };
-}
-
 function createData1(position, status) {
     return { position, status };
 }
-
-const rows = [
-    createData('Software Engineer', 1590, 6.0, 'IT bachelor`s degree'),
-    createData('Profesional procrastinator', 15900, 8.0, 'Being a procrastinator certificate'),
-    createData('Lel', 100, 1.0, 'X)'),
-    createData('Software Engineer', 1590, 6.0, 'IT bachelor`s degree'),
-    createData('Software Engineer', 1590, 6.0, 'IT bachelor`s degree'),
-];
-
 const rows1 = [
     createData1('Software Engineer', 'Ne'),
     createData1('Profesional procrastinator', 'Accepted'),
 ];
 
 class Career extends React.Component {
-    render() {
 
+    componentDidMount() {
+        this.props.getPositions();
+    }
+    render() {
+        const {positions} = this.props;
         const user = JSON.parse(localStorage.getItem('user'));
         return (
             <div className="careerPageWrapper">
@@ -57,7 +48,7 @@ class Career extends React.Component {
                     <Grid item xs={12} sm={4}>
                         <div className="pap">
                             <div className="heading2"> Piece of fun :)</div>
-                            <Grid container direction="column" justify="left" alignItems="left">
+                            <Grid container direction="column" justify="flex-start" alignItems="flex-start">
                                 <div className="text"> Current pay: 0 </div>
                                 <div className="text"> Time: all </div>
                             </Grid>
@@ -77,14 +68,14 @@ class Career extends React.Component {
                                 </TableRow>
                             </TableHead>
                             <TableBody>
-                                {rows.map((row) => (
+                                {positions && positions.map((row) => (
                                     <TableRow key={row.name}>
                                         <TableCell component="th" scope="row">
                                             <div className="tableCell">{row.name}</div>
                                         </TableCell>
                                         <TableCell align="right"><div className="tableCell">{row.pay}</div></TableCell>
-                                        <TableCell align="right"><div className="tableCell">{row.hours}</div></TableCell>
-                                        <TableCell align="right"><div className="tableCell">{row.needed}</div></TableCell>                                        
+                                        <TableCell align="right"><div className="tableCell">{row.hoursPerDay}</div></TableCell>
+                                        <TableCell align="right"><div className="tableCell">{row.requirements}</div></TableCell>                                        
                                     </TableRow>
                                 ))}
                             </TableBody>
@@ -126,14 +117,12 @@ class Career extends React.Component {
 }
 
 function mapState(state) {
-    const { users, authentication } = state;
-    const { user } = authentication;
-    return { user, users };
+    const { positions } = state.applications;
+    return { positions };
 }
 
 const actionCreators = {
-    getUsers: userActions.getAll,
-    deleteUser: userActions.delete
+    getPositions: applicationActions.getPositions
 }
 
 const connectedCareer = connect(mapState, actionCreators)(Career);

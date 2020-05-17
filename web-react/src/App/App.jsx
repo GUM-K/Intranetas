@@ -43,12 +43,9 @@ class App extends React.Component {
                         <Route path="/register" component={RegisterPage} />
                         <Route path="/users" component={UsersPage} />
                         <PrivateRoute path="/career" component={Career} />
-<<<<<<< HEAD
                         <PrivateRoute path="/profile" component={Profile} />
-=======
                         <PrivateRoute path="/paychecks" component={Paychecks} />
                         <PrivateRoute path="/application" component={ApplicationPage} />
->>>>>>> 3dc7c362f299ddd05a702da280291b5e627acafa
                         <Redirect from="*" to="/" />
                     </Switch>
                 </Router>

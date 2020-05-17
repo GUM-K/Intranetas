@@ -1,9 +1,10 @@
-import React, { useState } from 'react'
+import React, { useState, useSelector } from 'react'
 import { SideBar } from '../_components'
 import { Header } from '../_components'
 import { Footer } from '../_components'
-import { Button, TextField } from '@material-ui/core'
+import { Button, TextField, Select, MenuItem, InputLabel, FormControl } from '@material-ui/core'
 import { makeStyles, ThemeProvider, createMuiTheme } from '@material-ui/core/styles';
+import { applicationActions } from '../_actions'
 import { authHeader } from '../_helpers';
 import axios from 'axios';
 
@@ -24,6 +25,8 @@ export default () => {
     const [CV, setCV] = useState();
     const [motivational, setMotivational] = useState();
     const [additionalInfo, setAdditionalInfo] = useState();
+    const [position, setPosition] = useState("");
+    const user = JSON.parse(localStorage.getItem('user'));
 
     const handleCVChange = event => {
         event.preventDefault();
@@ -43,6 +46,12 @@ export default () => {
         }
     }
 
+    const handlePositionChange = event => {
+        event.preventDefault();
+
+        setPosition(event.target.value);
+    }
+
     const handleChange = (event) => {
         event.preventDefault();
 
@@ -50,9 +59,11 @@ export default () => {
     }
 
     const handleSubmit = () => {
-        if (CV && motivational){
+        if (position && CV && motivational){
             const formData = new FormData();
 
+            formData.append('PositionId', position);
+            formData.append('UserId', user.id);
             formData.append('CV', CV);
             formData.append('Motivational', motivational);
             formData.append('AdditionalInfo', additionalInfo);
@@ -91,7 +102,11 @@ export default () => {
             },
             lastButt: {
                 marginBottom: '20px',
-            }
+            },
+            selectd: {
+                margin: theme.spacing(1),
+                minWidth: 120,
+            },
         }));
 
     const classes = useStyles(theme);
@@ -102,6 +117,20 @@ export default () => {
             <div className="content">
                 <form onSubmit={handleSubmit} noValidate>
                     <ThemeProvider theme={theme}>
+
+                        <h3>Choose position:</h3>
+                        <FormControl className={classes.selectd}>
+                            <InputLabel id="position-select">Position</InputLabel>
+                            <Select
+                                labelId="position-select"
+                                id="position"
+                                value={position}
+                                onChange={handlePositionChange}
+                            >
+                                <MenuItem value={1}>First</MenuItem>
+                                <MenuItem value={2}>Second</MenuItem>
+                            </Select>
+                        </FormControl>
 
                         <h3>Upload your CV:</h3>
 

@@ -11,5 +11,7 @@ namespace WebApi.Models.Application
         public IFormFile CV { get; set; }
         public IFormFile Motivational { get; set; }
         public string AdditionalInfo { get; set; }
+        public int PositionId { get; set; }
+        public int UserId { get; set; }
     }
 }

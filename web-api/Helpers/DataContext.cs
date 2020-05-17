@@ -20,5 +20,7 @@ namespace WebApi.Helpers
         }
 
         public DbSet<User> Users { get; set; }
+        public DbSet<Position> Positions { get; set; }
+        public DbSet<Application> Applications { get; set; }
     }
 }

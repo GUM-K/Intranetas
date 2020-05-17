@@ -6,11 +6,7 @@
     box-sizing: border-box;
 }
 .content {
-<<<<<<< HEAD
-    min-height: 70vh;
-=======
     min-height: 59vh;
->>>>>>> 3dc7c362f299ddd05a702da280291b5e627acafa
     background-color: #faf4f4;
     min-width: 50%;
     padding: 10px;

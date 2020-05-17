@@ -49,6 +49,7 @@ class UsersPage extends React.Component {
 function mapState(state) {
     const { users, authentication } = state;
     const { user } = authentication;
+    console.log(users);
     return { user, users };
 }
 

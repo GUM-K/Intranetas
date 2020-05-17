@@ -11,16 +11,12 @@
     "start": "webpack-dev-server --open"
   },
   "dependencies": {
-<<<<<<< HEAD
-    "@material-ui/core": "^4.9.12",
-=======
     "@material-ui/core": "^4.9.13",
     "@material-ui/icons": "^4.9.1",
     "@material-ui/styles": "^4.9.13",
     "axios": "^0.19.2",
     "babel-preset-react": "^6.24.1",
     "cors": "^2.8.5",
->>>>>>> 3dc7c362f299ddd05a702da280291b5e627acafa
     "force": "0.0.3",
     "history": "^4.10.1",
     "material-table": "^1.57.2",
