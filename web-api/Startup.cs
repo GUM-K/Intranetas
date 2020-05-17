@@ -35,7 +35,13 @@ namespace WebApi
             else
                 services.AddDbContext<DataContext, SqliteDataContext>();
 
-            services.AddCors();
+            services.AddCors(options =>
+            {
+                options.AddPolicy("all", builder => builder.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod());
+            });
+            services.AddControllers().AddNewtonsoftJson(options =>
+                    options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore
+            );
             services.AddControllers();
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
@@ -93,12 +99,7 @@ namespace WebApi
             app.UseRouting();
 
             // global cors policy
-            app.UseCors(x => x
-                .AllowAnyOrigin()
-                .AllowAnyMethod()
-                .AllowAnyHeader());
-            app.UseCors(builder =>
-                builder.WithOrigins("http://localhost:8080"));
+            app.UseCors("all");
 
             app.UseAuthentication();
             app.UseAuthorization();

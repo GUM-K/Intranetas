@@ -16,6 +16,7 @@ import Paper from '@material-ui/core/Paper';
 import { makeStyles } from '@material-ui/core/styles';
 import { spacing } from '@material-ui/system';
 import { applicationActions } from '../_actions';
+import { useDispatch } from 'react-redux';
 
 const useStyles = makeStyles({
     table: {
@@ -31,11 +32,12 @@ const rows1 = [
     createData1('Profesional procrastinator', 'Accepted'),
 ];
 const user = JSON.parse(localStorage.getItem('user'));
+const dispatch = useDispatch();
 
 class Career extends React.Component {
     componentDidMount() {
-        this.props.getPositions();
-        this.props.getPosition(user.id);
+        dispatch(this.props.getPositions());
+        dispatch(this.props.getPosition(user.id));
     }
     render() {
         const {positions, position} = this.props;
