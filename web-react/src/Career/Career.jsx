@@ -30,15 +30,15 @@ const rows1 = [
     createData1('Software Engineer', 'Ne'),
     createData1('Profesional procrastinator', 'Accepted'),
 ];
+const user = JSON.parse(localStorage.getItem('user'));
 
 class Career extends React.Component {
-
     componentDidMount() {
         this.props.getPositions();
+        this.props.getPosition(user.id);
     }
     render() {
-        const {positions} = this.props;
-        const user = JSON.parse(localStorage.getItem('user'));
+        const {positions, position} = this.props;
         return (
             <div className="careerPageWrapper">
                 <Header pageName='Career' />
@@ -46,13 +46,13 @@ class Career extends React.Component {
                 <div className="content">
                     <div className="heading1"> Current position </div>
                     <Grid item xs={12} sm={4}>
-                        <div className="pap">
-                            <div className="heading2"> Piece of fun :)</div>
+                        {position && (<div className="pap">
+                            <div className="heading2">{position.name}</div>
                             <Grid container direction="column" justify="flex-start" alignItems="flex-start">
-                                <div className="text"> Current pay: 0 </div>
-                                <div className="text"> Time: all </div>
+                                <div className="text"> Current pay: {position.pay} </div>
+                                <div className="text"> Time: {position.hoursPerDay} </div>
                             </Grid>
-                        </div>
+                        </div>)}
                     </Grid>
                     <div className="heading1"> Available positions </div>
                     <div className="empty" />
@@ -62,7 +62,7 @@ class Career extends React.Component {
                             <TableHead className="TableHead">
                                     <TableRow>
                                         <TableCell > <div className="headCell">Position</div></TableCell>
-                                        <TableCell align="right" > <div className="headCell">Pay</div></TableCell>
+                                        <TableCell align="right" > <div className="headCell">Pay, eur</div></TableCell>
                                         <TableCell align="right" ><div className="headCell">Hours / day</div></TableCell>
                                         <TableCell align="right" ><div className="headCell">Required things</div></TableCell>                                    
                                 </TableRow>
@@ -117,12 +117,13 @@ class Career extends React.Component {
 }
 
 function mapState(state) {
-    const { positions } = state.applications;
-    return { positions };
+    const { positions, position } = state.applications;
+    return { positions, position };
 }
 
 const actionCreators = {
-    getPositions: applicationActions.getPositions
+    getPositions: applicationActions.getPositions,
+    getPosition: applicationActions.getPosition
 }
 
 const connectedCareer = connect(mapState, actionCreators)(Career);

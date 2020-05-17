@@ -28,6 +28,19 @@ export function applications(state = {}, action) {
     return { 
         error: action.error
     };
+    case applicationConstants.GET_POSITION_REQUEST:
+      return {
+          waiting: true,
+          userId: action.userId
+      };
+    case applicationConstants.GET_POSITION_SUCCESS:
+      return {
+          position: action.position
+      };
+    case applicationConstants.GET_POSITION_FAILURE:
+      return { 
+          error: action.error
+      };
     default:
       return state
   }

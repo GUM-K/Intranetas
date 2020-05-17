@@ -4,6 +4,7 @@ import { authHeader } from '../_helpers';
 export const applicationService = {
     addAplication,
     getPositions,
+    getPosition
 };
 
 function addAplication(application) {
@@ -24,6 +25,15 @@ function getPositions() {
     };
 
     return fetch(`${config.apiUrl}/applications/positions`, requestOptions).then(handleResponse);
+}
+
+function getPosition(userId) {
+    const requestOptions = {
+        method: 'GET',
+        headers: authHeader()
+    };
+
+    return fetch(`${config.apiUrl}/applications/position/${userId}`, requestOptions).then(handleResponse);
 }
 
 function handleResponse(response) {

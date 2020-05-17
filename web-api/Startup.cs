@@ -97,6 +97,8 @@ namespace WebApi
                 .AllowAnyOrigin()
                 .AllowAnyMethod()
                 .AllowAnyHeader());
+            app.UseCors(builder =>
+                builder.WithOrigins("http://localhost:8080"));
 
             app.UseAuthentication();
             app.UseAuthorization();

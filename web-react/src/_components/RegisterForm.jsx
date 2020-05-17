@@ -1,8 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
+import { Select, MenuItem, InputLabel, FormControl } from '@material-ui/core'
 
 import { userActions } from '../_actions';
+import { applicationActions } from '../_actions';
 
 class UserForm extends React.Component {
     constructor(props) {
@@ -14,13 +16,19 @@ class UserForm extends React.Component {
                 firstName: '',
                 lastName: '',
                 username: '',
-                password: ''
+                password: '',
+                positionId: ''
             },
             submitted: false
         };
 
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.handlePositionChange = this.handlePositionChange.bind(this);
+    }
+
+    componentDidMount(){
+        this.props.getPositions();
     }
 
     handleChange(event) {
@@ -34,18 +42,30 @@ class UserForm extends React.Component {
         });
     }
 
+    handlePositionChange(event) {
+        event.preventDefault();
+        const { user } = this.state;
+        const value = event.target.value;
+        this.setState({
+            user: {
+                ...user,
+                positionId: value
+            }
+        });
+    }
+
     handleSubmit(event) {
         event.preventDefault();
 
         this.setState({ submitted: true });
         const { user } = this.state;
-        if (user.firstName && user.lastName && user.username && user.password) {
+        if (user.positionId && user.firstName && user.lastName && user.username && user.password) {
             this.props.register(user);
         }
     }
 
     render() {
-        const { registering } = this.props;
+        const { registering, positions } = this.props;
         const { user, submitted } = this.state;
         return (
             <div className="col-md-6 col-md-offset-3">
@@ -79,6 +99,19 @@ class UserForm extends React.Component {
                             <div className="help-block">Password is required</div>
                         }
                     </div>
+                    <FormControl fullWidth margin='dense' required>
+                            <InputLabel id="position-select">Position</InputLabel>
+                            <Select
+                                labelId="position-select"
+                                id="position"
+                                value={user.position}
+                                onChange={this.handlePositionChange}
+                            >
+                             {positions && positions.map((pos) => (
+                                <MenuItem key={pos.id} value={pos.id}>{pos.name}</MenuItem>
+                                ))}
+                            </Select>
+                    </FormControl>
                     <div className="form-group">
                         <button className="btn btn-primary" style={{ backgroundColor: "#5b3034", borderColor: "#5b3034" }}>Register</button>
                         {registering &&
@@ -94,12 +127,14 @@ class UserForm extends React.Component {
 
 function mapState(state) {
     const { registering } = state.registration;
-    return { registering };
+    const { positions } = state.applications;
+    return { registering, positions };
 }
 
 const actionCreators = {
     register: userActions.register,
-    update: userActions.update
+    update: userActions.update,
+    getPositions: applicationActions.getPositions
 }
 
 const connectedUserForm = connect(mapState, actionCreators)(UserForm);

@@ -7,5 +7,6 @@ namespace WebApi.Models.Users
         public string LastName { get; set; }
         public string Username { get; set; }
         public int ChangePassword { get; set; }
+        public int PositionId { get; set; }
     }
 }

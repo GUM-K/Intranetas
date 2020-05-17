@@ -65,7 +65,8 @@ namespace WebApi.Controllers
                 FirstName = user.FirstName,
                 LastName = user.LastName,
                 ChangePassword = user.ChangePassword,
-                Token = tokenString
+                Token = tokenString,
+                PositionId = user.PositionId
             });
         }
 

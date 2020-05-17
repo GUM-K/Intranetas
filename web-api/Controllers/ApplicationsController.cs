@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -37,14 +38,24 @@ namespace WebApi.Controllers
         [HttpGet("positions")]
         public IActionResult GetPositions()
         {
+            Response.Headers.Add("Access-Control-Allow-Origin", "http://localhost:8080");
+            Response.Headers.Add("Access-Control-Allow-Credentials", "true");
             var result = _applicationService.GetPositions();
             return Ok(result.ToList());
         }
         [HttpGet("{id}")]
         public IActionResult GetApplications(int id)
         {
+            Response.Headers.Add("Access-Control-Allow-Origin", "http://localhost:8080");
             var result = _applicationService.GetMyApplications(id);
             return Ok(result.ToList());
+        }
+        [HttpGet("position/{id}")]
+        public IActionResult GetPosition(int id)
+        {
+            var result = _applicationService.GetPosition(id);
+
+            return Ok(result);
         }
     }
 }

@@ -1,4 +1,4 @@
-import React, { useState, useSelector } from 'react'
+import React, { useState, useEffect } from 'react'
 import { SideBar } from '../_components'
 import { Header } from '../_components'
 import { Footer } from '../_components'
@@ -6,6 +6,7 @@ import { Button, TextField, Select, MenuItem, InputLabel, FormControl } from '@m
 import { makeStyles, ThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 import { applicationActions } from '../_actions'
 import { authHeader } from '../_helpers';
+import { useSelector, useDispatch } from 'react-redux';
 import axios from 'axios';
 
 const theme = createMuiTheme({
@@ -27,6 +28,7 @@ export default () => {
     const [additionalInfo, setAdditionalInfo] = useState();
     const [position, setPosition] = useState("");
     const user = JSON.parse(localStorage.getItem('user'));
+    const dispatch = useDispatch();
 
     const handleCVChange = event => {
         event.preventDefault();
@@ -37,6 +39,9 @@ export default () => {
         }
     }
 
+    useEffect(() => { 
+        dispatch(applicationActions.getPositions())
+    }, []);
     const handleMotivationalChange = event => {
         event.preventDefault();
         const file = event.target.files[0];
@@ -110,6 +115,7 @@ export default () => {
         }));
 
     const classes = useStyles(theme);
+    const positions = useSelector((state) => state.applications.positions)
     return(
         <div className="page-wrapper">
             <Header />
@@ -127,8 +133,9 @@ export default () => {
                                 value={position}
                                 onChange={handlePositionChange}
                             >
-                                <MenuItem value={1}>First</MenuItem>
-                                <MenuItem value={2}>Second</MenuItem>
+                                {positions && positions.map((pos) => (
+                                <MenuItem key={pos.id} value={pos.id}>{pos.name}</MenuItem>
+                                ))}
                             </Select>
                         </FormControl>
 

@@ -15,6 +15,7 @@ namespace WebApi.Services
         public Application AddApplication(ApplicationTransfer model);
         public ICollection<Position> GetPositions();
         public ICollection<Application> GetMyApplications(int userId);
+        public Position GetPosition(int userId);
     }
     public class ApplicationService : IApplicationService
     {
@@ -79,6 +80,16 @@ namespace WebApi.Services
 
             return applications;
         }
+
+        public Position GetPosition(int userId)
+        {
+            int id = _context.Users.Where(x => x.Id == userId).Select(x => x.PositionId).FirstOrDefault();
+            var position = _context.Positions.FirstOrDefault(x => x.Id == id);
+
+            return position;
+        }
+
+
         private string GetUniqueFileName(string fileName)
         {
             fileName = Path.GetFileName(fileName);
