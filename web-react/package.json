@@ -11,6 +11,7 @@
     "start": "webpack-dev-server --open"
   },
   "dependencies": {
+    "@babel/runtime": "^7.9.6",
     "@material-ui/core": "^4.9.13",
     "@material-ui/icons": "^4.9.1",
     "@material-ui/styles": "^4.9.13",
@@ -34,6 +35,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.4.3",
+    "@babel/plugin-transform-runtime": "^7.9.6",
     "@babel/preset-env": "^7.4.3",
     "@babel/preset-react": "^7.0.0",
     "babel-loader": "^8.1.0",

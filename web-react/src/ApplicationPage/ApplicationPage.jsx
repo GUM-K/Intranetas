@@ -42,6 +42,7 @@ export default () => {
     useEffect(() => { 
         dispatch(applicationActions.getPositions())
     }, []);
+    
     const handleMotivationalChange = event => {
         event.preventDefault();
         const file = event.target.files[0];

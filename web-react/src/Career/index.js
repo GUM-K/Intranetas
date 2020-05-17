@@ -1,2 +1,5 @@
-export * from './Career'
+import Career from './Career';
 
+export {
+    Career
+}

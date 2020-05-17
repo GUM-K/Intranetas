@@ -6,7 +6,8 @@ import { history } from '../_helpers';
 export const applicationActions = {
     addAplication,
     getPositions,
-    getPosition
+    getPosition,
+    getApplications
 };
 
 function addAplication(application) {
@@ -70,4 +71,25 @@ function getPosition(userId) {
     function request(userId) { return { type: applicationConstants.GET_POSITION_REQUEST, userId } }
     function success(position) { return { type: applicationConstants.GET_POSITION_SUCCESS, position } }
     function failure(error) { return { type: applicationConstants.GET_POSITION_FAILURE, error } }
+}
+
+function getApplications(userId) {
+    return dispatch => {
+        dispatch(request(userId));
+
+        applicationService.getApplications(userId)
+            .then(
+                applications => { 
+                    dispatch(success(applications));
+                },
+                error => {
+                    dispatch(failure(error.toString()));
+                    dispatch(alertActions.error(error.toString()));
+                }
+            );
+    };
+
+    function request(userId) { return { type: applicationConstants.GET_APPLICATIONS_REQUEST, userId } }
+    function success(applications) { return { type: applicationConstants.GET_APPLICATIONS_SUCCESS, applications } }
+    function failure(error) { return { type: applicationConstants.GET_APPLICATIONS_FAILURE, error } }
 }

@@ -4,7 +4,8 @@ import { authHeader } from '../_helpers';
 export const applicationService = {
     addAplication,
     getPositions,
-    getPosition
+    getPosition,
+    getApplications
 };
 
 function addAplication(application) {
@@ -18,24 +19,40 @@ function addAplication(application) {
         .then(handleResponse);
 }
 
-function getPositions() {
+async function getPositions() {
     const requestOptions = {
         method: 'GET',
         headers: authHeader()
     };
 
-    return fetch(`${config.apiUrl}/applications/positions`, requestOptions).then(handleResponse);
+    //return fetch(`${config.apiUrl}/applications/positions`, requestOptions).then(handleResponse);
+    const res = await fetch(`${config.apiUrl}/applications/positions`, requestOptions);
+    const result = await res.json();
+    return result;
 }
 
-function getPosition(userId) {
+async function getPosition(userId) {
     const requestOptions = {
         method: 'GET',
         headers: authHeader()
     };
 
-    return fetch(`${config.apiUrl}/applications/position/${userId}`, requestOptions).then(handleResponse);
+    //return fetch(`${config.apiUrl}/applications/position/${userId}`, requestOptions).then(handleResponse);
+    const res = await fetch(`${config.apiUrl}/applications/position/${userId}`, requestOptions);
+    const result = await res.json();
+    return result;
 }
+async function getApplications(userId) {
+    const requestOptions = {
+        method: 'GET',
+        headers: authHeader()
+    };
 
+    //return fetch(`${config.apiUrl}/applications/${userId}`, requestOptions).then(handleResponse);
+    const res = await fetch(`${config.apiUrl}/applications/${userId}`, requestOptions);
+    const result = await res.json();
+    return result;
+}
 function handleResponse(response) {
     return response.text().then(text => {
         const data = text && JSON.parse(text);

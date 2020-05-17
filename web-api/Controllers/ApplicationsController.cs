@@ -25,6 +25,8 @@ namespace WebApi.Controllers
         [HttpPost("upload")]
         public IActionResult Create([FromForm] ApplicationTransfer model)
         {
+            Response.Headers.Add("Access-Control-Allow-Origin", "http://localhost:8080");
+            Response.Headers.Add("Access-Control-Allow-Credentials", "true");
             // do other validations on your model as needed
             if (model.PositionId != 0 && model.CV != null && model.Motivational != null)
             {
@@ -47,12 +49,15 @@ namespace WebApi.Controllers
         public IActionResult GetApplications(int id)
         {
             Response.Headers.Add("Access-Control-Allow-Origin", "http://localhost:8080");
+            Response.Headers.Add("Access-Control-Allow-Credentials", "true");
             var result = _applicationService.GetMyApplications(id);
             return Ok(result.ToList());
         }
         [HttpGet("position/{id}")]
         public IActionResult GetPosition(int id)
         {
+            Response.Headers.Add("Access-Control-Allow-Origin", "http://localhost:8080");
+            Response.Headers.Add("Access-Control-Allow-Credentials", "true");
             var result = _applicationService.GetPosition(id);
 
             return Ok(result);

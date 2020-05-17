@@ -14,7 +14,7 @@ namespace WebApi.Services
     {
         public Application AddApplication(ApplicationTransfer model);
         public ICollection<Position> GetPositions();
-        public ICollection<Application> GetMyApplications(int userId);
+        public ICollection<MyApplicationDTO> GetMyApplications(int userId);
         public Position GetPosition(int userId);
     }
     public class ApplicationService : IApplicationService
@@ -74,11 +74,20 @@ namespace WebApi.Services
             return positions;
         }
 
-        public ICollection<Application> GetMyApplications(int userId)
+        public ICollection<MyApplicationDTO> GetMyApplications(int userId)
         {
             var applications = _context.Applications.Where(x => x.UserId == userId).ToList();
-
-            return applications;
+            var applicationDto = new List<MyApplicationDTO>();
+            foreach (Application application in applications)
+            {
+                applicationDto.Add(new MyApplicationDTO
+                {
+                    Id = application.Id,
+                    Position = _context.Positions.Where(x => x.Id == application.PositionId).Select(x=> x.Name).FirstOrDefault(),
+                    Status = application.Status
+                });
+            }
+            return applicationDto;
         }
 
         public Position GetPosition(int userId)

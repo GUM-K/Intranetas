@@ -100,6 +100,8 @@ namespace WebApi.Services
             if (!string.IsNullOrWhiteSpace(userParam.LastName))
                 user.LastName = userParam.LastName;
 
+            user.PositionId = userParam.PositionId;
+
             // update password if provided
             if (!string.IsNullOrWhiteSpace(password))
             {

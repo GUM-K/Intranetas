@@ -8,6 +8,8 @@ namespace WebApi.Models.Users
         public string Username { get; set; }
         [Required]
         public string Password { get; set; }
+        [Required]
+        public int PositionId { get; set; }
         public int ChangePassword { get; set; }
     }
 }

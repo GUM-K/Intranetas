@@ -18,10 +18,12 @@ export function applications(state = {}, action) {
       };
     case applicationConstants.GET_POSITIONS_REQUEST:
     return {
+        ...state,
         waiting: true
     };
     case applicationConstants.GET_POSITIONS_SUCCESS:
     return {
+        ...state,
         positions: action.positions
     };
     case applicationConstants.GET_POSITIONS_FAILURE:
@@ -30,14 +32,29 @@ export function applications(state = {}, action) {
     };
     case applicationConstants.GET_POSITION_REQUEST:
       return {
-          waiting: true,
+          ...state,
           userId: action.userId
       };
     case applicationConstants.GET_POSITION_SUCCESS:
       return {
+          ...state,
           position: action.position
       };
     case applicationConstants.GET_POSITION_FAILURE:
+      return { 
+          error: action.error
+      };
+    case applicationConstants.GET_APPLICATIONS_REQUEST:
+      return {
+          ...state,
+          userId: action.userId
+      };
+    case applicationConstants.GET_APPLICATIONS_SUCCESS:
+      return {
+          ...state,
+          applications: action.applications
+      };
+    case applicationConstants.GET_APPLICATIONS_FAILURE:
       return { 
           error: action.error
       };
