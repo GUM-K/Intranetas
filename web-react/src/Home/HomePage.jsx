@@ -5,7 +5,9 @@ import {Footer} from '../_components'
 import 'react-calendar/dist/Calendar.css';
 import { userActions } from '../_actions';
 import { connect } from 'react-redux';
-import '../css/main.css';
+import '../css/index.css';
+import { Carousel } from 'antd';
+import 'antd/dist/antd.css';
 
 class HomePage extends React.Component {
     render() {
@@ -15,7 +17,28 @@ class HomePage extends React.Component {
                 <Header />
                 <SideBar />
                 <div className="content">
-                    <div> WIP </div>
+                    <Carousel autoplay>
+                        <div>
+                            <a href="https://reactjs.org/">
+                                <img class="mx-auto" src="https://create-react-app.dev/img/logo-og.png" width="100%" height="300px" />
+                            </a>
+                        </div>
+                        <div>
+                            <a href="https://material-ui.com/">
+                                <img class="mx-auto" src="https://miro.medium.com/max/3374/1*_mdpsmNUZ05vQb-q09t3jA.png" width="100%" height="300px" />
+                            </a>
+                        </div>
+                        <div>
+                            <a href="https://www.informatics-europe.org/news.html">
+                                <img class="mx-auto" src="https://www.informatics-europe.org/images/news/news-general.jpg" width="100%" height="300px" />
+                            </a>
+                        </div>
+                        <div>
+                            <a href="https://hub.packtpub.com/category/programming/">
+                                <img class="mx-auto" src="https://lh3.googleusercontent.com/hRd7I3RiY891nK1U6enY3ZCuN21HRiHnFNu7r7Jn-hDMwEooJY5Ie5cyEPcLlFihvQ" width="100%" height="300px" />
+                            </a>
+                        </div>
+                    </Carousel>
                 </div>
                 <Footer />
             </div>
