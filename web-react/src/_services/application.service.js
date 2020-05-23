@@ -22,7 +22,7 @@ function addAplication(application) {
 async function getPositions() {
     const requestOptions = {
         method: 'GET',
-        headers: authHeader()
+        headers: { 'Content-Type': 'application/json' },
     };
 
     //return fetch(`${config.apiUrl}/applications/positions`, requestOptions).then(handleResponse);
@@ -34,7 +34,7 @@ async function getPositions() {
 async function getPosition(userId) {
     const requestOptions = {
         method: 'GET',
-        headers: authHeader()
+        headers: { 'Content-Type': 'application/json' },
     };
 
     //return fetch(`${config.apiUrl}/applications/position/${userId}`, requestOptions).then(handleResponse);

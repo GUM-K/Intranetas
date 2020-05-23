@@ -12,7 +12,7 @@ namespace WebApi.Services
         IEnumerable<User> GetAll();
         User GetById(int id);
         User Create(User user, string password);
-        void Update(User user, string password = null);
+        User Update(User user, string password = null);
         void Delete(int id);
     }
 
@@ -70,13 +70,14 @@ namespace WebApi.Services
             user.PasswordSalt = passwordSalt;
             user.ChangePassword = 1;
 
+            user.WorkingSince = DateTime.Today;
             _context.Users.Add(user);
             _context.SaveChanges();
 
             return user;
         }
 
-        public void Update(User userParam, string password = null)
+        public User Update(User userParam, string password = null)
         {
             var user = _context.Users.Find(userParam.Id);
 
@@ -96,11 +97,13 @@ namespace WebApi.Services
             // update user properties if provided
             if (!string.IsNullOrWhiteSpace(userParam.FirstName))
                 user.FirstName = userParam.FirstName;
-
             if (!string.IsNullOrWhiteSpace(userParam.LastName))
                 user.LastName = userParam.LastName;
+            if (!string.IsNullOrWhiteSpace(userParam.Email))
+                user.Email = userParam.Email;
+            if (!string.IsNullOrWhiteSpace(userParam.PhoneNumber))
+                user.PhoneNumber = userParam.PhoneNumber;
 
-            user.PositionId = userParam.PositionId;
 
             // update password if provided
             if (!string.IsNullOrWhiteSpace(password))
@@ -114,6 +117,8 @@ namespace WebApi.Services
             }
             _context.Users.Update(user);
             _context.SaveChanges();
+
+            return user;
         }
 
         public void Delete(int id)

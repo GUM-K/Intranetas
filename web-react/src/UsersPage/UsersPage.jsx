@@ -23,6 +23,7 @@ class UsersPage extends React.Component {
                 {users.error && <span className="text-danger">ERROR: {users.error}</span>}
                 {users.items &&
                     <ul>
+                        {console.log(users)}
                         {users.items.map((user, index) =>
                             <li key={user.id}>
                                 {user.firstName + ' ' + user.lastName}

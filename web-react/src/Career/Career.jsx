@@ -40,6 +40,7 @@ const Career = () => {
     const applications = useSelector((state) => state.applications.applications);
     return (
         <div className="careerPageWrapper">
+            {console.log(user)}
             <Header pageName='Career' />
             <SideBar />
             <div className="content">

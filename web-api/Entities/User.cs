@@ -1,3 +1,5 @@
+using System;
+
 namespace WebApi.Entities
 {
     public class User
@@ -6,6 +8,9 @@ namespace WebApi.Entities
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string Username { get; set; }
+        public string Email { get; set; }
+        public string PhoneNumber { get; set; }
+        public DateTime WorkingSince { get; set; }
         public int ChangePassword { get; set; }
         public int PositionId { get; set; }
         public byte[] PasswordHash { get; set; }

@@ -10,9 +10,12 @@ class UserForm extends React.Component {
 
         this.state = {
             user: {
+                email: this.props.userInfo ? this.props.userInfo.email || '' : '',
+                phoneNumber: this.props.userInfo ? this.props.userInfo.phoneNumber || '' : '',
                 id: this.props.userInfo ? this.props.userInfo.id || '' : '',
                 username: this.props.userInfo ? this.props.userInfo.username || '' : '',
-                password: ''
+                password: '',
+                token: this.props.userInfo ? this.props.userInfo.token || '' : ''
             },
             submitted: false
         };
@@ -54,6 +57,14 @@ class UserForm extends React.Component {
             <div className="col-md-6 col-md-offset-3">
                 <h2>{this.props.formTitle}</h2>
                 <form name="form" onSubmit={this.handleSubmit}>
+                    <div className="form-group">
+                        <label htmlFor="email">Email</label>
+                        <input type="text" className="form-control" name="email" value={user.email} onChange={this.handleChange} />
+                    </div>
+                    <div className="form-group">
+                        <label htmlFor="phoneNumber">Phone Number</label>
+                        <input type="text" className="form-control" name="phoneNumber" value={user.phoneNumber} onChange={this.handleChange} />
+                    </div>
                     <div className={'form-group' + (submitted && !user.username ? ' has-error' : '')}>
                         <label htmlFor="username">Username</label>
                         <input type="text" className="form-control" name="username" value={user.username} onChange={this.handleChange} />

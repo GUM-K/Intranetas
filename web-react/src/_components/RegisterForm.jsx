@@ -17,7 +17,7 @@ class UserForm extends React.Component {
                 lastName: '',
                 username: '',
                 password: '',
-                positionId: ''
+                positionId: 1
             },
             submitted: false
         };
@@ -59,7 +59,7 @@ class UserForm extends React.Component {
 
         this.setState({ submitted: true });
         const { user } = this.state;
-        if (user.positionId && user.firstName && user.lastName && user.username && user.password) {
+        if (user.positionId != 0 && user.firstName && user.lastName && user.username && user.password) {
             this.props.register(user);
         }
     }
@@ -104,7 +104,7 @@ class UserForm extends React.Component {
                             <Select
                                 labelId="position-select"
                                 id="position"
-                                value={user.position}
+                                value={user.positionId}
                                 onChange={this.handlePositionChange}
                             >
                              {positions && positions.map((pos) => (

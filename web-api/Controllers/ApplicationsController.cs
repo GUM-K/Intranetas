@@ -60,6 +60,8 @@ namespace WebApi.Controllers
             Response.Headers.Add("Access-Control-Allow-Credentials", "true");
             var result = _applicationService.GetPosition(id);
 
+            if (result == null)
+                return Ok();
             return Ok(result);
         }
     }

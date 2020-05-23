@@ -66,7 +66,10 @@ namespace WebApi.Controllers
                 LastName = user.LastName,
                 ChangePassword = user.ChangePassword,
                 Token = tokenString,
-                PositionId = user.PositionId
+                PositionId = user.PositionId,
+                Email = user.Email,
+                PhoneNumber = user.PhoneNumber,
+                WorkingSince = user.WorkingSince
             });
         }
 
@@ -116,8 +119,20 @@ namespace WebApi.Controllers
             try
             {
                 // update user 
-                _userService.Update(user, model.Password);
-                return Ok();
+                User userUpdated = _userService.Update(user, model.Password);
+                return Ok(new
+                {
+                    Id = userUpdated.Id,
+                    Username = userUpdated.Username,
+                    FirstName = userUpdated.FirstName,
+                    LastName = userUpdated.LastName,
+                    ChangePassword = userUpdated.ChangePassword,
+                    PositionId = userUpdated.PositionId,
+                    Token = model.Token,
+                    Email = userUpdated.Email,
+                    PhoneNumber = userUpdated.PhoneNumber,
+                    WorkingSince = userUpdated.WorkingSince
+                });
             }
             catch (AppException ex)
             {

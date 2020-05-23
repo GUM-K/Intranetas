@@ -17,28 +17,30 @@ class HomePage extends React.Component {
                 <Header />
                 <SideBar />
                 <div className="content">
-                    <Carousel autoplay>
-                        <div>
-                            <a href="https://reactjs.org/">
-                                <img class="mx-auto" src="https://create-react-app.dev/img/logo-og.png" width="100%" height="300px" />
-                            </a>
-                        </div>
-                        <div>
-                            <a href="https://material-ui.com/">
-                                <img class="mx-auto" src="https://miro.medium.com/max/3374/1*_mdpsmNUZ05vQb-q09t3jA.png" width="100%" height="300px" />
-                            </a>
-                        </div>
-                        <div>
-                            <a href="https://www.informatics-europe.org/news.html">
-                                <img class="mx-auto" src="https://www.informatics-europe.org/images/news/news-general.jpg" width="100%" height="300px" />
-                            </a>
-                        </div>
-                        <div>
-                            <a href="https://hub.packtpub.com/category/programming/">
-                                <img class="mx-auto" src="https://lh3.googleusercontent.com/hRd7I3RiY891nK1U6enY3ZCuN21HRiHnFNu7r7Jn-hDMwEooJY5Ie5cyEPcLlFihvQ" width="100%" height="300px" />
-                            </a>
-                        </div>
-                    </Carousel>
+                    <div className="carousel-content">
+                        <Carousel autoplay>
+                            <div>
+                                <a target="_blank" rel="noopener noreferrer" href="https://reactjs.org/">
+                                    <img className="mx-auto" src="https://create-react-app.dev/img/logo-og.png" width="100%" height="300px" />
+                                </a>
+                            </div>
+                            <div>
+                                <a target="_blank" rel="noopener noreferrer" href="https://material-ui.com/">
+                                    <img className="mx-auto" src="https://miro.medium.com/max/3374/1*_mdpsmNUZ05vQb-q09t3jA.png" width="100%" height="300px" />
+                                </a>
+                            </div>
+                            <div>
+                                <a target="_blank" rel="noopener noreferrer" href="https://www.informatics-europe.org/news.html">
+                                    <img className="mx-auto" src="https://www.informatics-europe.org/images/news/news-general.jpg" width="100%" height="300px" />
+                                </a>
+                            </div>
+                            <div>
+                                <a target="_blank" rel="noopener noreferrer" href="https://hub.packtpub.com/category/programming/">
+                                    <img className="mx-auto" src="https://lh3.googleusercontent.com/hRd7I3RiY891nK1U6enY3ZCuN21HRiHnFNu7r7Jn-hDMwEooJY5Ie5cyEPcLlFihvQ" width="100%" height="300px" />
+                                </a>
+                            </div>
+                        </Carousel>
+                    </div>
                 </div>
                 <Footer />
             </div>

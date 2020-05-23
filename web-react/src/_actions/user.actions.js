@@ -15,7 +15,6 @@ export const userActions = {
 function login(username, password) {
     return dispatch => {
         dispatch(request({ username }));
-
         userService.login(username, password)
             .then(
                 user => { 
@@ -74,8 +73,8 @@ function update(user) {
         userService.update(user)
             .then(
                 user => {
-                    dispatch(success());
-                    history.push('/');
+                    dispatch(success(user));
+                    history.push('/profile');
                     dispatch(alertActions.success('Updated successfully'));
                 },
                 error => {

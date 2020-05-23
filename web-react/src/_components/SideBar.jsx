@@ -9,13 +9,9 @@ export const SideBar = () => {
         <div>            
             <div id="mySidenav" className="sidenav">
                 <a href="/home">Home</a>
-                <a href="#" >Finances</a>
-                <a href="#">Settings</a>
                 <a href="/courses" >Courses</a>
-                <a href="/profile" >Edit profile</a>
+                <a href="/profile" >Profile</a>
                 <a href="/paychecks">Paychecks</a>
-                <a href="#" >Teams</a>                
-                <a href="#" >Vacation</a>
                 <a href="/application" >Application</a>
                 <a href="/career">Career</a>
             </div>

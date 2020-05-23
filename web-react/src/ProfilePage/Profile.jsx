@@ -30,23 +30,28 @@ const useStyles = makeStyles({
 
 function createData(rowName, data)
 {
-         return {rowName, data};
+    return {rowName, data};
 }
 
-const rows =
-[
-    createData('Email address', 'gytislauzadis30@gmail.com'),
-    createData('Contact phone number:', '+443457877877'),
-    createData('Work ID:', 'C7970'),
-    createData('Here since:', '2017-08-12')
-];
-
+const getUserRows = (user) => {
+    const rows = 
+    [
+        createData('First name:', user.firstName),
+        createData('Last name:', user.lastName),
+        createData('Email address:', user.email),
+        createData('Contact phone number:', user.phoneNumber),
+        createData('Here since:', user.workingSince?.substr(0,10))
+    ];
+    return rows;
+}
 
 class ProfilePage extends React.Component {
     render() {
+        const user = JSON.parse(localStorage.getItem('user'));
+        const rows = getUserRows(user);
         return (
             <div className="ProfilePageWrapper">
-                {console.log(JSON.parse(localStorage.getItem('user')))}
+                {console.log(user)}
                 <Header pageName='Profile'/>
                 <SideBar />
                 <div className="content">
@@ -70,7 +75,15 @@ class ProfilePage extends React.Component {
                                         </TableRow>
                                     ))}
                                      <TableRow>
-                                     <TableCell align='center' colSpan='3'><Button variant="contained" fullWidth='true' className='buttonColor'> Edit</Button></TableCell>
+                                     <TableCell align='center' colSpan='3'>
+                                         <Button 
+                                            variant="contained"
+                                            fullWidth 
+                                            className='buttonColor'
+                                            href='/update'>
+                                                Edit
+                                        </Button>
+                                     </TableCell>
                                     </TableRow>
                                 </TableBody>
                             </Table>

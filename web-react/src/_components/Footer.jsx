@@ -19,10 +19,10 @@ export default () => {
                             <h4 className="head"> Social</h4>
                             <hr/>
                             <Grid container direction="column" justify="center" alignItems="center">
-                                <a className="soc" href="#"> Facebook </a>
-                                <a className="soc" href="#"> Instagram </a>
-                                <a className="soc" href="#"> LinkedIn </a>
-                                <a className="soc" href="#"> Reddit </a>
+                                <a className="soc" target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/watch?v=j9V78UbdzWI"> Facebook </a>
+                                <a className="soc" target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/watch?v=j9V78UbdzWI"> Instagram </a>
+                                <a className="soc" target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/watch?v=j9V78UbdzWI"> LinkedIn </a>
+                                <a className="soc" target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/watch?v=j9V78UbdzWI"> Reddit </a>
                             </Grid>
                         </div>
                     </Grid>
