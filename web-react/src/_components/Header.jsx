@@ -50,9 +50,8 @@ export const Header = ({ pageName }) => {
                         aria-controls={open ? 'menu-list-grow' : undefined}
                         aria-haspopup="true"
                         onClick={handleToggle}
-                        className="menu-component"
-                    >
-                        My account
+                        className="acc menu-component">                    
+                        My account 
                     </a>
                     <Popper open={open} anchorEl={anchorRef.current} role={undefined} transition disablePortal>
                         {({ TransitionProps, placement }) => (
@@ -63,8 +62,8 @@ export const Header = ({ pageName }) => {
                                 <Paper>
                                     <ClickAwayListener onClickAway={handleClose}>
                                         <MenuList id="menu-list-grow">
-                                            <MenuItem onClick={handleClose}><a href="/profile">Profile</a></MenuItem>
-                                            <MenuItem onClick={handleClose}><a href="/login">Logout</a></MenuItem>
+                                            <MenuItem onClick={handleClose} ><a href="/profile" className="menu-item">Profile</a></MenuItem>
+                                            <MenuItem onClick={handleClose}><a href="/login" className="menu-item">Logout</a></MenuItem>
                                         </MenuList>
                                     </ClickAwayListener>
                                 </Paper>

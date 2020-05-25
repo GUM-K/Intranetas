@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
+import '../css/main.css';
 
 import { userActions } from '../_actions';
 
@@ -54,7 +55,9 @@ class UserForm extends React.Component {
         const { registering  } = this.props;
         const { user, submitted } = this.state;
         return (
-            <div className="col-md-6 col-md-offset-3">
+            <div>
+            {this.props.formTitle === 'Update' && JSON.parse(localStorage.getItem('user')).changePassword === 1 
+            && <div className="password-change">We highly recommend to change your initial password</div>} 
                 <h2>{this.props.formTitle}</h2>
                 <form name="form" onSubmit={this.handleSubmit}>
                     <div className="form-group">
@@ -87,11 +90,13 @@ class UserForm extends React.Component {
                         <Link to="/" className="btn btn-link">Cancel</Link>
                     </div>
                 </form>
-                {this.props.formTitle === 'Update' && JSON.parse(localStorage.getItem('user')).changePassword === 1 && <div className="password-change">We highly recommend to change your initial password</div>}
+
             </div>
         );
     }
 }
+
+        
 
 function mapState(state) {
     const { registering } = state.registration;

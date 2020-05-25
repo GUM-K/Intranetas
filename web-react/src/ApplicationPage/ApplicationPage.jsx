@@ -8,6 +8,7 @@ import { applicationActions } from '../_actions'
 import { authHeader } from '../_helpers';
 import { useSelector, useDispatch } from 'react-redux';
 import axios from 'axios';
+import '../css/main.css';
 
 const theme = createMuiTheme({
     palette: {
@@ -112,14 +113,18 @@ export default () => {
             selectd: {
                 margin: theme.spacing(1),
                 minWidth: 120,
+                fontSize: '14px',
             },
+            text: {
+                fontSize: '14px'
+            }
         }));
 
     const classes = useStyles(theme);
     const positions = useSelector((state) => state.applications.positions)
     return(
         <div className="page-wrapper">
-            <Header />
+            <Header pageName='Application'/>
             <SideBar />
             <div className="content">
                 <form onSubmit={handleSubmit} noValidate>
@@ -127,7 +132,7 @@ export default () => {
 
                         <h3>Choose position:</h3>
                         <FormControl className={classes.selectd}>
-                            <InputLabel id="position-select">Position</InputLabel>
+                            <InputLabel className={classes.text} id="position-select">Position</InputLabel>
                             <Select
                                 labelId="position-select"
                                 id="position"
@@ -135,7 +140,7 @@ export default () => {
                                 onChange={handlePositionChange}
                             >
                                 {positions && positions.map((pos) => (
-                                <MenuItem key={pos.id} value={pos.id}>{pos.name}</MenuItem>
+                                <MenuItem className={classes.text} key={pos.id} value={pos.id}>{pos.name}</MenuItem>
                                 ))}
                             </Select>
                         </FormControl>

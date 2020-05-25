@@ -69,7 +69,7 @@ class UserForm extends React.Component {
         const { user, submitted } = this.state;
         return (
             <div className="col-md-6 col-md-offset-3">
-                <h2>Register</h2>
+                <h2>Register a new user</h2>
                 <form name="form" onSubmit={this.handleSubmit}>
                     <div className={'form-group' + (submitted && !user.firstName ? ' has-error' : '')}>
                         <label htmlFor="firstName">First Name</label>
@@ -100,15 +100,16 @@ class UserForm extends React.Component {
                         }
                     </div>
                     <FormControl fullWidth margin='dense' required>
-                            <InputLabel id="position-select">Position</InputLabel>
+                            <InputLabel style={{ fontSize: '14px', color: 'black'}} id="position-select">Position</InputLabel>
                             <Select
+                                style={{ fontSize: '14px', color: 'black'}}
                                 labelId="position-select"
                                 id="position"
                                 value={user.positionId}
                                 onChange={this.handlePositionChange}
                             >
                              {positions && positions.map((pos) => (
-                                <MenuItem key={pos.id} value={pos.id}>{pos.name}</MenuItem>
+                                <MenuItem style={{ fontSize: '14px'}} key={pos.id} value={pos.id}>{pos.name}</MenuItem>
                                 ))}
                             </Select>
                     </FormControl>

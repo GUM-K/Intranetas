@@ -11,7 +11,7 @@ export default () => {
                         <div className="paper">
                             <h4 className="head"> General </h4>
                             <hr/>
-                            <a > Made by GUM&K, 2020 </a>
+                            <p> Made by GUM&K, 2020 </p>
                         </div>
                     </Grid>
                     <Grid item xs={12} sm={4}>

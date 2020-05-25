@@ -53,13 +53,27 @@ a:hover {
     -ms-user-select: none;
     user-select: none;
 }
+
+.menu-item {
+    color: black;
+    font-size:  14px;
+}
+
+.menu-item:hover {
+    color: #5b3034
+}
 .menu-user:hover {
-    cursor: auto;
+    cursor: pointer;
+    color: white;
 }
 .header a.logo {
     font-size: 20px;
     font-weight: bold;
     }
+
+.header a.acc {
+    color: white;
+}
 
 .pagename {
     float: left;
@@ -88,19 +102,6 @@ a:hover {
 
 .header-right {
     float: right;
-}
-
-#header-calendar {
-    overflow: hidden;
-    position: relative;
-    transition: 0.5s;
-    height: 0px;
-}
-
-.react-calendar {
-    position: absolute;
-    right: 0;
-    top: 0;
 }
 
 

@@ -64,7 +64,7 @@ class ProfilePage extends React.Component {
                             <Table className={useStyles.table} aria-label="simple table">
                                 <TableHead className="TableHead">
                                     <TableRow>
-                                        <TableCell align="center" colSpan="3"><div className='headCell'>My information</div></TableCell>            
+                                        <TableCell align="center" colSpan="3"><div className='headCell' >My information</div></TableCell>            
                                     </TableRow>
                                 </TableHead>
                                 <TableBody>
@@ -80,8 +80,9 @@ class ProfilePage extends React.Component {
                                             variant="contained"
                                             fullWidth 
                                             className='buttonColor'
+                                            style={{ fontSize: '14px', backgroundColor: "#5b3034", borderColor: "#5b3034", color: "white" }}
                                             href='/update'>
-                                                Edit
+                                                Update
                                         </Button>
                                      </TableCell>
                                     </TableRow>

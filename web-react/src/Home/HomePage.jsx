@@ -2,10 +2,10 @@ import React from 'react'
 import { SideBar } from '../_components'
 import { Header } from '../_components'
 import {Footer} from '../_components'
-import 'react-calendar/dist/Calendar.css';
 import { userActions } from '../_actions';
 import { connect } from 'react-redux';
 import '../css/index.css';
+import '../css/main.css';
 import { Carousel } from 'antd';
 import 'antd/dist/antd.css';
 

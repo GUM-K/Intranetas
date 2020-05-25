@@ -93,6 +93,7 @@ export default function MaterialTableDemo() {
                     }}
             icons={tableIcons}
             title="Paychecks archive"
+            style={{fontSize: '12px'}}
             columns={state.columns}
             data={state.data}
             editable={{

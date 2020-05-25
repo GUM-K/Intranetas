@@ -87,7 +87,7 @@ class LoginPage extends React.Component {
                 <Container component="main" maxWidth="xs">
                     <CssBaseline />
                     <div className={classes.paper}>
-                        <Typography component="h1" variant="h5">
+                        <Typography component="h1" variant="h5" style={{ fontSize: '14px'}}>
                             Login
                         </Typography>
                         <form className={classes.form} onSubmit={this.handleSubmit} noValidate>
@@ -97,6 +97,7 @@ class LoginPage extends React.Component {
                                     margin="normal"
                                     required
                                     fullWidth
+                                    style={{ fontSize: '14px'}}
                                     id="username"
                                     label="Username"
                                     name="username"
@@ -109,6 +110,7 @@ class LoginPage extends React.Component {
                                     margin="normal"
                                     required
                                     fullWidth
+                                    style={{ fontSize: '12px'}}
                                     name="password"
                                     label="Password"
                                     type="password"
@@ -121,6 +123,7 @@ class LoginPage extends React.Component {
                                     fullWidth
                                     variant="contained"
                                     color="primary"
+                                    style={{ fontSize: '12px'}}
                                     className={classes.submit}
                                 >
                                     Login

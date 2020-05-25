@@ -7,14 +7,14 @@
     overflow: hidden;
 }
 
-    .ant-carousel .slick-slide h3 {
-        color: #fff;
-    }
+.ant-carousel .slick-slide h3 {
+    color: #fff;
+}
 
 .ant-carousel {
     max-width: 700px;
     max-height: 300px !important;
 }
 .carousel-content {
-    padding-left: 25%;
+    padding-left: 40vh;
 }
