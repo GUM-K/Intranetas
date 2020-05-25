@@ -17,7 +17,7 @@ class HomePage extends React.Component {
                 <Header />
                 <SideBar />
                 <div className="content">
-                    <div className="carousel-content">
+                    <div className="col-md-offset-3 carousel-content">
                         <Carousel autoplay>
                             <div>
                                 <a target="_blank" rel="noopener noreferrer" href="https://reactjs.org/">
