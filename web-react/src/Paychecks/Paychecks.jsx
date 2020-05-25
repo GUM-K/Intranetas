@@ -45,7 +45,7 @@ export default function MaterialTableDemo() {
         columns: [
             { title: 'Name', field: 'name' },
             { title: 'Surname', field: 'surname' },
-            { title: 'Pay day', field: 'payDay', type: 'numeric' },
+            { title: 'Pay day', field: 'payDay', type: "date" },
             { title: 'Amount', field: 'amount', type: 'numeric' },
             { title: 'Bonuses', field: 'bonuses', type: 'numeric' },
             {
